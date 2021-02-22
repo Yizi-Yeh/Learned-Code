@@ -64,7 +64,11 @@
       const ansCopy2 = comments.slice(ansFindIndex + 1);
       // 解構 ansCopy1 ansCopy2 放入新陣列ansCombine
       const ansCombine = [...ansCopy1, ...ansCopy2];
+
+      // 或是先從原始陣列先複製(解構取出每個值)，再刪除
+      const ansCopy3 = [...comments].splice(ansFindIndex, 1);
       console.log(ansCombine, comments);
+      consoleloh(ansCopy3);
     </script>
   </body>
 </html>
