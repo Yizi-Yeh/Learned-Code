@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪💪</title>
+  </head>
+  <body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+      // ## Array Cardio Day 2
+
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Lux", year: 2015 },
+      ];
+
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
+
+      // Some and Every Checks
+      // Array.prototype.some() // is at least one person 19 or older?
+
+      const ansSome = people.some((people) => {
+        // getUTCFullYear() 方法用來取得一個 Date 物件的年份，時區是 UTC 時間。
+        return new Date().getUTCFullYear() - people.year >= 19;
+      });
+      console.log(ansSome);
+      // Array.prototype.every() // is everyone 19 or older?
+      const ansEvery = people.every((people) => {
+        return new Date().getUTCFullYear() - people.year >= 19;
+      });
+      console.log(ansEvery);
+
+      // Array.prototype.find()
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+      const ansFind = comments.find((comment) => comment.id === 823423);
+      console.log(ansFind);
+
+      // Array.prototype.findIndex()
+      // Find the comment with this ID
+      const ansFindIndex = comments.findIndex(
+        (comment) => comment.id === 823423
+      );
+      console.log(ansFindIndex);
+      // delete the comment with the ID of 823423
+      // 分別使用 slice && splice
+
+      // splice (會改變原始陣列)
+      const ansdeleteSlice = comments.splice(ansFindIndex, 1);
+      console.log(ansdeleteSlice);
+
+      // slice (先複製一份，再刪除)
+      // 複製陣列從開始到 ansFindIndex 的前一個
+      const ansCopy1 = comments.slice(0, ansFindIndex);
+      // 從 ansFindIndex+1 位置處到最後
+      const ansCopy2 = comments.slice(ansFindIndex + 1);
+      // 解構 ansCopy1 ansCopy2 放入新陣列ansCombine
+      const ansCombine = [...ansCopy1, ...ansCopy2];
+      console.log(ansCombine, comments);
+    </script>
+  </body>
+</html>
