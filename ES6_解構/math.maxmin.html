@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Math.max 和 Math.min 是比較所有得到的參數，回傳最大的。
+
+      Math.max(1, 2, 3, 4, 5);
+      // 5
+
+      Math.max([1, 2, 3, 4, 5]);
+      // NaN
+
+      //所以要使用 ES6 的解構
+
+      Math.max(...[1, 2, 3, 4, 5]);
+      // 5
+
+      const arr = [5, 6, 7, 8];
+      Math.max(...arr);
+      // 8
+
+      //2個 array 要比較時：
+
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [5, 6, 7, 8];
+
+      Math.max(...arr1, ...arr2);
+      // 8
+    </script>
+  </body>
+</html>
