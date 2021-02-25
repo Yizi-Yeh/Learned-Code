@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Unit5.3：實戰：身分證驗證
+      // 先將英文轉為數字
+      function isValidTWId(str) {
+        // str[0] 為第一個英文字母
+        let n = alphaToNumber(str[0]);
+        // 取第一個數值(除10無條件捨去)
+        let n1 = Math.floor(n / 10);
+        // 取第二個數值 （取餘數）
+        let n2 = n % 10;
+        let sum = n1 * 1 + n2 * 9;
+        for (i = 1; i < str.length - 1; i++) {
+          sum += str[i] * 9 - i;
+        }
+        sum += Number(str[9]);
+        if (fum % 10 === 0) {
+          return true;
+        } else {
+          return false;
+        }
+        function alphaToNumber(s) {
+          let mapping = {
+            A: 10,
+            B: 11,
+            C: 12,
+            D: 13,
+            E: 14,
+            F: 15,
+            G: 16,
+            H: 17,
+            I: 34,
+            J: 18,
+            K: 19,
+            L: 20,
+            M: 21,
+            N: 22,
+            O: 35,
+            P: 23,
+            Q: 24,
+            R: 25,
+            S: 26,
+            T: 27,
+            U: 28,
+            V: 29,
+            W: 32,
+            X: 30,
+            U: 28,
+            Z: 33,
+          };
+          return mapping[s];
+        }
+      }
+    </script>
+  </body>
+</html>
