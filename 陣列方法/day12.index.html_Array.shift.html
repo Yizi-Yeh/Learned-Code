@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      // 偵測鍵盤事件，所以使用window.addEventListener
+      // 使用keydown(若使用keyup會連續觸發)
+      // key: 上上下下左右左右ba
+      const secretCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+      // 使用者 input
+      const input = [];
+      window.addEventListener("keyup", function (e) {
+        //  鍵盤的事件物件中有key && keycode 事件物件
+        console.log(e.keyCode);
+        input.push(e.keyCode);
+
+        // whiele (input.Length > secretCode.Length) { input.shift()}
+        // shift() -> shift() 方法會移除並回傳陣列的第一個元素。此方法會改變陣列的長度。
+        input.splice(-secretCode.length - 1, input.length - secretCode.length);
+
+        //  比對兩陣列是否相同
+        if (input.join("|") === secretCode.join("|")) {
+          cornify_add();
+        }
+      });
+    </script>
+  </body>
+</html>
