@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // while
+      let lottery = [];
+      let n;
+      while (lottery.length < 6) {
+        // 隨機取 1~49區間的數字
+        // Math.floor(Math.random() * 49) 0~48 --> +1 --> 1~49
+        n = Math.floor(Math.random() * 49) + 1;
+        // 如果選出來的n不存在，則放入陣列
+        if (lottery.indexOf(n) === -1) {
+          lottery.push(n);
+        }
+      }
+    </script>
+  </body>
+</html>
