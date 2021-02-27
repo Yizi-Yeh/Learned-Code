@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="button">first</button>
+    <button class="button">second</button>
+    <button class="button">third</button>
+    <script>
+      // 不管點擊哪個都會出現 third
+      // callback函式向外層去尋找變數，這時候它會找到的已經是處於 global 的 buttonName，而值會是 ‘third’。
+      // 因為 buttonName 這個變數是暴露在 global environment，所以他不會被保存在 function 中。
+      // 我們若想把這個變數保存在 function 內，我們就可以使用到上面所講述的 closure 的概念
+      //   const buttons = document.querySelectorAll(".button");
+      //   for (var i = 0; i < buttons.length; i++) {
+      //     var buttonName = buttons[i].innerHTML;
+      //     buttons[i].addEventListener("click", function () {
+      //       console.log(buttonName);
+      //     });
+      //   }
+
+      // 解決方法：閉包
+      // 建立一個閉包把資料存在這個 function 當中
+      function saveButtonName(buttonName) {
+        var buttonName = buttonName;
+        return function () {
+          console.log(buttonName);
+        };
+      }
+
+      const buttons = document.querySelectorAll(".button");
+      for (var i = 0; i < buttons.length; i++) {
+        var buttonName = buttons[i].innerHTML;
+        buttons[i].addEventListener("click", saveButtonName(buttonName));
+      }
+    </script>
+  </body>
+</html>
