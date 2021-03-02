@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function solve(line) {
+        let temp = line[0].split(" ");
+        // 相加轉數字
+        let num = Number(temp[0] + temp[1] + temp[2]);
+        let p = add(num);
+        while (p >= 10) {
+          p = add(num);
+        }
+        return p;
+      }
+
+      function add(n) {
+        let sum = 0;
+        while (n != 0) {
+          sum += n % 10;
+          n = Math.floor(n / 10);
+        }
+        return n;
+      }
+    </script>
+  </body>
+</html>
