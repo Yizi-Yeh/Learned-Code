@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 給你兩個數字以及一個運算符號（只會是加減乘除其中一個），請你求出計算結果
+
+      function ans(lines) {
+        let solve = lines[0].split(" ");
+        let first = Number(solve[0]);
+        let second = Number(solve[2]);
+
+        if (solve[1] === "+") {
+          console.log(first + second);
+        } else if (solve[1] === "-") {
+          console.log(first - second);
+        } else if (solve[1] === "*") {
+          console.log(first * second);
+        } else if (solve[1] === "/") {
+          console.log(first / second);
+        }
+      }
+    </script>
+  </body>
+</html>

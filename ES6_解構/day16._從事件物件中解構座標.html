@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouse Shadow</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 contenteditable>🔥WOAH!</h1>
+    </div>
+
+    <style>
+      html {
+        color: black;
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+      }
+
+      h1 {
+        text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+        font-size: 100px;
+      }
+    </style>
+
+    <script>
+      (function () {
+        // 設定陰影距離開元素100的距離
+        let length = 100;
+        let text = document.querySelector("h1");
+
+        // 在 hero class 中監聽mousenove事件
+        document
+          .querySelector(".hero")
+          .addEventListener("mousemove", function (e) {
+            // 將offsetX, offsetY從事件物件中解構
+            // 拆分出滑鼠座標
+            let { offsetX, offsetY } = e;
+
+            // 如果mousemove的target不是監聽的目標（ＤＯＭ中不只一層）
+            // 則計算點會以中心子元素為主重新計算
+            // 故 (this.target != this) 如果mousemove對象不是監聽對象
+            if (e.target !== this) {
+              // 把子元素外層至容器距離加回
+              offsetX += e.target.offsetLeft;
+              offsetY += e.target.offsetTop;
+            }
+
+            // 計算該目標在容器中的位置
+            // 該目標座標 / 外盒hero的總座標
+            // console.log(
+            //   offsetX / this.offsetWidth,
+            //   offsetY / this.offsetHeight
+            // );
+
+            // 計算加上陰影後的目標
+            let lengthX =
+              // 原本只有一個方向(0~1)，但若希望兩邊都有陰影，則要把中心點變為0
+              // 所以 *2 -1 >> 0 *2 => 0~2
+              // 0~2 -1 => -1~1
+              Math.floor((offsetX / this.offsetWidth) * length) * 2 - length;
+
+            let lengthY =
+              Math.floor((offsetY / this.offsetHeight) * length) * 2 - length;
+
+            //text-shadow: h-shadow v-shadow blur-radius color;
+            //h-shadow：陰影距離原始字串於水平方向上的座標。
+            //v-shadow：陰影距離原始字串於垂直方向上的座標。
+            //blur-radius：陰影的模糊半徑，預設值為0。
+            //color：陰影的顏色，若無給值則預設為跟本體字串的顏色相同。
+            text.style.textShadow = ` 
+           ${lengthX * -2}px ${lengthY * -2}px 5px rgba(255,0,0,0.8),
+           ${lengthX * -2}px ${lengthY * -0.5}px 5px rgba(0,255,0,0.8),
+           ${lengthX * 2}px ${lengthY * 2}px 5px rgba(0,0,255,0.8),
+           ${lengthX * 2}px ${lengthY * 0.5}px 5px rgba(0,255,255,0.8)
+           `;
+          });
+      })();
+    </script>
+  </body>
+</html>
