@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        /* 刪除多餘空白 */
+        font-size: 0;
+        /* 最大寬度（大於1024px就會限制） */
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .a {
+        /* 因為原本有預設height的高度200px，但放入logo後會超出，故再次調整a的高度 */
+        height: initial !important;
+      }
+      .block {
+        /* 每個區塊以內容為準，且可以左右並列 */
+        display: inline-block;
+        font-size: 20px;
+        height: 200px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 3px solid black;
+      }
+      .logo {
+        width: 30%;
+        /* 限制圖片的最小寬度，希望在手機版時不要過小 */
+        min-width: 150px;
+      }
+      .a,
+      .g {
+        width: 100%;
+      }
+      .b {
+        width: 70%;
+      }
+      .c,
+      .f {
+        width: 30%;
+      }
+      .d,
+      .e {
+        width: 35%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 預設display block 左右會填滿 -->
+    <div class="container">
+      <!-- .block*7>h4 -->
+      <div class="a block">
+        <h4>RWD原理及應用A(100%)</h4>
+        <img class="logo" src="/RWD/cat_righttop.png" alt="" />
+      </div>
+      <div class="b block">
+        <h4>Ｂ(70%)</h4>
+      </div>
+      <div class="c block">
+        <h4>Ｃ(30%)</h4>
+      </div>
+      <div class="d block">
+        <h4>Ｄ(35%)</h4>
+      </div>
+      <div class="e block">
+        <h4>Ｅ(35%)</h4>
+      </div>
+      <div class="f block">
+        <h4>Ｆ(30%)</h4>
+      </div>
+      <div class="g block">
+        <h4>Ｇ(100%)</h4>
+      </div>
+    </div>
+  </body>
+</html>
