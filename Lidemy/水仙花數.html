@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getDigits(n) {
+        let result = 0;
+        while (n !== 0) {
+          Math.floor(n / 10);
+          result++;
+        }
+        return result;
+      }
+
+      function isNarcissistic(n) {
+        //取個位數
+        let Digits = getDigits(n);
+        let m = n;
+        let sum = 0;
+        while (m !== 0) {
+          let num = m % 10;
+          sum += num ** Digits;
+          m = Math.floor(m / 10);
+        }
+
+        console.log(sum);
+
+        if (sum === n) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
