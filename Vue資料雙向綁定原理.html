@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" v-model="userName" />
+    <input type="text" v-model="userName" />
+    <script>
+      // object.definePropety -> 可以自行設計寫入跟讀取的方式
+      // 寫入資料時是實際寫到 DOM 上
+      // 讀取時也是在這個 DOM 上讀取
+      // 以此特性達到雙向綁定行為
+      Object.definePropety(window, "userName", {
+        // 讀取
+        get: function () {
+          return window._userName;
+        },
+        // 寫值
+        set: function (value) {
+          window._userName = value;
+        },
+      });
+
+      // ----------------------------------------------------實作
+      function setModel(name) {
+        // 使用屬性選取器(因為要選的是v-model="屬性值")
+        const vModels = document.querySelectorAll('[v-model]="' + name + '"');
+        Object.defineProperty(window, name, {
+          get: function () {
+            return vModels[0].value;
+          },
+          //  設定值
+          set: function (value) {
+            vModels.forEach(function (model) {
+              model.value = value;
+            });
+          },
+        });
+        // 當畫面上的資料更新時，利用監聽事件改變資料
+        vModels.forEach(function (model) {
+          model.addEventListener("input", function (e) {
+            // this.value 輸入框的值
+            // 將值寫入屬性時，會觸發 setter，同時更新全部輸入框的值
+            window[name] = this.value;
+          });
+        });
+      }
+      // 透過 setModel function 設定資料雙向綁定
+      setModel("userName");
+      setModel("phone");
+    </script>
+  </body>
+</html>
