@@ -23,5 +23,6 @@ export function MousePosition() {
    }) 
 
     // return reactive pos
+    // 利用 toRefs 包裝 reactive 物件後，父元件便可以以解構方式取得該元素
    return  {...toRefs(pos),name}
 }
