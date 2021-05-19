@@ -1,85 +1,53 @@
 <script>
-import propsTest2 from "@/components/propsTest2.vue";
+import { ref } from 'vue'
+import { TitleBar } from '@/components/TitleBar.vue'
+import { listItem } from '@/components/listItem.vue'
 
-import { reactive, ref } from "vue";
-// 放到畫面上
 export default {
   components: {
-    propsTest2,
+     TitleBar,
+     listItem
   },
-  // 父層要傳資料給子組件
+
   setup() {
-  const str = ref('hello world')
 
-  const bool = ref(true)
+   const HandListShouw = () => {
+         isOpen.value = !isOpen.value
+     }
 
-  const num = ref(0)
+   const isOpen = ref(true)
 
-  const arr = reactive([])
-
-  const obj = reactive({})
-
-  const handclickfn = () => {}
-   
     return {
-      str,
-      bool,
-      num,
-      arr,
-      handclickfn,
-
+     isOpen,HandListShouw 
     };
   },
 };
 </script>
 
 <template>
-<propsTest2 
-:str="str"
-:bool="bool"
-:num="num"
-:arr="arr"
-:handclickfn="handclickfn"
-
-/>
-
+<TitleBar :HandListShouw="HandListShouw" />
+<listItem :isOpen="isOpen" />
 </template>
 
-<style>
-/* .fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-} */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html,
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: slategray;
-}
-#app {
-  width: 400px;
-  overflow: hidden;
-  border: 1px solid #42b983;
-  border-radius: 10px;
-}
-
-/* #box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-} */
+<style lang="scss">
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: slategray;
+      }
+      #app {
+        width: 400px;
+        overflow: hidden;
+        border: 1px solid #42b983;
+        border-radius: 10px;
+      }
 </style>
