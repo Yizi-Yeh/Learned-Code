@@ -10,6 +10,22 @@
 <script>
 import { onMounted, ref } from 'vue'
 export default {
+    // 傳遞資料上，需注意的事
+    // 透過props方法，聲明要接收的參數props
+    props:{},
+
+    // 往上傳遞，一樣要聲明要把哪些 emits 往上傳出
+    // 可使用陣列的方式
+    emits:['CallBack'],
+    // 若想先做驗證，可使用物件
+    emits:{
+    // 將 CallBack 作為驗證函式
+    CallBack: () => {
+    // 先執行驗證函式，再 callback 到父組件
+        return nam.value ===  0
+    }
+    },
+
 
     // 2.改以透過解構方式
     setup( props,{ emit } ){
@@ -18,7 +34,7 @@ export default {
         })
     },
 
-    // setup fucntion 中的第二個參數為context
+    // setup fucntion 中的第二個參數為 context
     // context為物件，其中包含 1.attrs 2.context 3.slots
     // 而我們要使用的即為2.context 
     // context 中 emit
@@ -26,7 +42,7 @@ export default {
         const num = ref(0)
 
         onMounted(()=>{
-            // object { } , 1.attrs 2.context 3.slots
+            // object { } , 1.attrs 2.emit 3.slots
             // 我們需要使用 context function 將資料回傳
             console.log(context)
             // context.emit('父層要接收事件的名稱',要回傳的內容)
