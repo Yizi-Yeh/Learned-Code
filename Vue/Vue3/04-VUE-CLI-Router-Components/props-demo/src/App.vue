@@ -2,12 +2,13 @@
 import { ref } from 'vue'
 import { TitleBar } from '@/components/TitleBar.vue'
 import { listItem } from '@/components/listItem.vue'
-import { EmitTest } from '@/components/EmitTest.vue'
+import { TimerBox } from '@/components/TimerBox.vue'
 export default {
   components: {
      TitleBar,
      listItem,
-     EmitTest
+     TimerBox
+
   },
 
   setup() {
@@ -22,8 +23,12 @@ export default {
       console.log(num)
     }
 
+    const handTimeOut  = (num) => {
+      console.log('time is over',num.value)
+    }
+
     return {
-     isOpen,HandListShouw,HandCallBackFn
+     isOpen,HandListShouw,HandCallBackFn,handTimeOut
     };
   },
 };
@@ -32,7 +37,7 @@ export default {
 <template>
 <TitleBar :HandListShouw="HandListShouw" />
 <listItem :isOpen="isOpen" />
-<EmitTest @CallBack="HandCallBackFn"/>
+<TimerBox @TimeOut="handTimeOut"/>
 </template>
 
 <style lang="scss">
