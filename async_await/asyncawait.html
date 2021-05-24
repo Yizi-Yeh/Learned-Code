@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Async Await 語法：簡化 Promise 語法
+      // 前提：此函式 return promise物件
+      function delayAdd(n1, n2, delayTime) {
+        //直接寫return
+        return new promise(function (resolve, result) {
+          window.setTimeout(function () {
+            resolve(n1 + n2);
+          }, delayTime);
+        });
+      }
+      //   改善的部分：呼叫的地方
+      async function test() {
+        // await 一個函式，但前提是該函式回傳promise物件
+        // resolve結果直接進到result中
+        let result = await delayAdd(3, 4, 2000);
+        // await函式完成後，才會執行之後的程式
+        // 等待 2 秒後 印出 hello / result
+        console.log("hello");
+        console.log("resutl");
+      }
+    </script>
+  </body>
+</html>

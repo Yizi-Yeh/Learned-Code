@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Promise 物件
+      function delayAdd(n1, n2, delayTime) {
+        //   建立 Promise 物件：new Promise(執行函式)
+        let p = new promise(function (resolve, result) {
+          window.setTimeout(function () {
+            resolve(n1 + n2); //執行完成，呼叫 resolve 函式，並把結果透過參數傳入
+          }, delayTime);
+        });
+        return p;
+      }
+
+      function delayAdd(n1, n2, delayTime) {
+        //直接寫return
+        return new promise(function (resolve, result) {
+          window.setTimeout(function () {
+            resolve(n1 + n2);
+          }, delayTime);
+        });
+      }
+
+      function test() {
+        let promise = delayAdd(3, 4, 2000);
+        // promise.then(接收 resolve() 結果)
+        promise.then(function (result) {
+          console.log(result);
+        });
+      }
+    </script>
+  </body>
+</html>
