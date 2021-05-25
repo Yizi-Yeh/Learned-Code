@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 可以利用 Promise 的方法將非同步程式編為同步程式
+
+      //  如果在宣告函數前，使用了 async 關鍵字，則可以在函數內使用 await
+      //  當 await 某個 Promise 時，函數暫停執行，直到該Promise產生結果
+      //  如果 Promise 執行，則返回值
+      //  如果 Promise 拒絕，則拋出錯誤值
+      async function myFirstAsyncFunction() {
+        try {
+          const finishdValue = await promise;
+        } catch (rejectedValue) {
+          // ...
+        }
+      }
+
+      //示例: 記錄獲取日誌
+      function logFetch(url) {
+        return fetch(url)
+          .then((res) => res.text())
+          .then((text) => {
+            console.log(text);
+          })
+          .catch((err) => {
+            console.error("fetch failes"), err;
+          });
+      }
+
+      // 以下是利用異步函數具有相同作用的代碼
+      //   await 的任何內容都通過 Promise.resolve() 傳遞
+      async function logFetch(url) {
+        try {
+          const response = await fetch(url);
+          console.log(await response.text());
+        } catch (err) {
+          console.log("fetch failed", err);
+        }
+      }
+
+      //  異步函數返回值
+      // 無論是否使用 await ，非同步函式都會 回傳 Promise
+
+      //  function wait 回傳一個promise
+      function wait(ms) {
+        return new Promise((r) => setTimeout(r, ms));
+      }
+
+      // 等待wait執行後return world
+      // async function => await promise => do someing
+      // …調用 hello() 返回的 Promise 會在執行時返回 "world"。
+      async function hello() {
+        await wait(500);
+        return "world";
+      }
+
+      //…調用 foo() 返回的 Promise 會在拒絕時返回 Error('bar')。
+      async function foo() {
+        await wait(500);
+        throw Error("bar");
+      }
+    </script>
+  </body>
+</html>
