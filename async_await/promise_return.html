@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let task1 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("resolve1");
+          }, 1000);
+        });
+      };
+
+      let task2 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("resolve2");
+          });
+        });
+      };
+
+      let task3 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("resolve3");
+          });
+        });
+      };
+
+      // 做第一個 task
+      task1
+        .then(
+          (result) => {
+            alert(`task1=>${result}`);
+            // 等待第一個做完之後，換第二個處理
+            // 執行task2()，return task2 裡的 promise物件
+            return task2();
+          },
+          (err) => {
+            alert(err);
+            // return 是為了丟給下一個做
+            return task2();
+          }
+        )
+        .then(
+          (result) => {
+            alert(result);
+            return task3();
+          },
+          (err) => {
+            alert(err);
+            return task3();
+          }
+        )
+        .then((result) => {
+          alert("done");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // ----------- ----------- -----------
+      // Promise.all 不在意順序性，在乎完整性
+      // 各自做各自的事，但有error時會跳入第二個參數
+      // 同時執行task1(), task2(), task3()，三個都完成才進入then
+      Promise.all([task1(), task2(), task3()]).then(
+        (result) => {
+          alert(`all done=>${result}`);
+        },
+        // 將 err 放在 then 的第二個參數
+        (err) => {
+          alert(`err=>${err}`);
+        }
+      );
+    </script>
+  </body>
+</html>
