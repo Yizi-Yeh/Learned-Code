@@ -13,7 +13,7 @@
   * Learned-Code/RWD/GVA
     * 筆記：Dropbox => GVA-Element-UI
   
-* 2021.05.27 Promise.then()中 return function 接續操作 / async_await 與 try catch使用
+* 2021.05.27 Promise.then()中 return function 的接續操作 / async_await 與 try catch使用
   * Learned-Code/async_await/promise_return
   * Learned-Code/async_await/asyncawait.js
     * 筆記：Dropbox => Promise.then( return fn )   
