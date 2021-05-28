@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        {
+          name: "Yizi",
+          order: "早餐",
+          price: 80,
+        },
+        {
+          name: "Sam",
+          order: "午餐",
+          price: 120,
+        },
+        {
+          name: "Summer",
+          order: "晚餐",
+          price: 40,
+        },
+        {
+          name: "Yellow",
+          order: "宵夜",
+          price: 60,
+        },
+      ];
+
+      //  一定會回傳一個結果
+      const nerOrders = people.map(function (item, key) {
+        return {
+          ...item,
+          newPrice: item.price * 0.8,
+        };
+      });
+
+      // 箭頭函式寫法
+      // 箭頭函式 自帶 return 所以省略
+      const newOrders = people.map((item, key) => ({
+        ...item,
+        newPrice: item.price * 0.8,
+      }));
+      console.log(newOrders);
+
+      // 篩選
+      const newOrders2 = people.filter(function (item, key) {
+        return item.price >= 80;
+      });
+
+      // 箭頭可省略 return
+      const newOrders2 = people.filter((item) => {
+        item.price >= 80;
+      });
+
+      const index = people.findIndex((item) => item, order === "早餐");
+      people[index].order = "早早餐";
+
+      // 累加
+      const total = people.reduce((acc, cur) => acc + cur.price, 0);
+
+      // 排序
+      const peopleSort = people.sort((a, b) => {
+        return a.price - b.price;
+      });
+    </script>
+  </body>
+</html>

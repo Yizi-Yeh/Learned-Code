@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        {
+          name: "Yizi",
+          order: "早餐",
+          price: 80,
+        },
+        {
+          name: "Sam",
+          order: "午餐",
+          price: 120,
+        },
+        {
+          name: "Summer",
+          order: "晚餐",
+          price: 40,
+        },
+        {
+          name: "Yellow",
+          order: "宵夜",
+          price: 60,
+        },
+      ];
+
+      // forEach有第三個參數，為 array 本身
+      // forEach無法中斷
+      people.forEach(function (item, index) {
+        console.log(item, index);
+      });
+
+      // 新訂單金額打半價
+      const newOrders = [];
+      people.forEach(function (item, key) {
+        newOrders[key] = {
+          // 複製陣列
+          ...item,
+          // 加入新key,value
+          newPrice: item.price * 0.5,
+        };
+      });
+      console.log(newOrders);
+
+      // 抓出價格大於 80 的值
+      const newOrders2 = [];
+      people.forEach(function (item, key) {
+        if (item.price >= 80) {
+          newOrders2.push(item);
+        }
+      });
+
+      // 抓出餐點為早餐的人
+      // 使用 let 因為 index 的值會改變
+      // 初始值若為 -1 較好
+      let index = 0;
+      people.forEach(function (item, key) {
+        if (item.order == "早餐") {
+          index = key;
+        }
+      });
+      people[index].order = "早早餐";
+
+      // 總金額
+      let total = 0;
+      people.forEach(function (item, key) {
+        total += item.price;
+      });
+    </script>
+  </body>
+</html>
