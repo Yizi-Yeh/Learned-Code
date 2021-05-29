@@ -21,6 +21,12 @@
     - 筆記：Dropbox => async_await && try catch 使用
 
 - 2021.05.28 陣列方法(foeEach / map / filter / findIndex / reduce / sort)
+
   - Learned-Code/陣列方法/HexArray/forEach.html
   - Learned-Code/陣列方法/HexArray/map.html
     - 筆記：Dropbox => 陣列方法
+
+- 2021.05.29 Vuex 資料流
+  - Learned-Code//Users/yizi/Desktop/git/Learned-Code/Vue/Vue3/07-Vuex/exercise
+    - 筆記：Dropbox => Vuex-actions
+    - 筆記：Dropbox => Vuex-modules
