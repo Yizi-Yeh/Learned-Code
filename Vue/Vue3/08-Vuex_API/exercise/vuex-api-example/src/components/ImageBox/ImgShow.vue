@@ -4,7 +4,8 @@ import { useStore } from "vuex";
 export default {
   setup() {
     const store = useStore();
-
+    
+    // 使用computed抓取state.getters的值
     const photoArr = computed(() => store.getters.photoArr);
 
     const idx = computed(() => store.getters.idx);

@@ -9,11 +9,30 @@ export default {
     ImageBox,
   },
   setup() {
+
     const store = useStore();
 
-    const handImgLoad = (imgArr) => {};
+    const handImgLoad = (imgArr) => {
+      let i = 0
+      imgArr.forEach(img => {
+          const imgs = new Image()
+          imgs.src = img.url
+          // 圖片載入完成後
+          imgs.onload = ()=>{
+            i++
+            store.dispatch('handLoadState', i === imgArr.length)
+          }
+      });
+    };
 
-    const init = () => {};
+    const init = () => {
+      // 確保在抓取 api 後
+      // 改變 Loading 狀態
+      // res.data ---> res ---> handImgLoad(res)
+      store.dispatch('handInit').then(res=>{
+        handImgLoad(res)
+      })
+    };
 
     onMounted(() => {
       init();

@@ -27,6 +27,12 @@
     - 筆記：Dropbox => 陣列方法
 
 - 2021.05.29 Vuex 資料流
-  - Learned-Code//Users/yizi/Desktop/git/Learned-Code/Vue/Vue3/07-Vuex/exercise
+
+  - Learned-Code/Vue/Vue3/07-Vuex/exercise
     - 筆記：Dropbox => Vuex-actions
     - 筆記：Dropbox => Vuex-modules
+
+- 2021.05.30 Vuex & API
+  - Learned-Code/Vue/Vue3/08-Vuex_API/exercise/vuex-api
+    - 筆記：Dropbox => Vuex-使用 axios 的 API 管理
+    - 筆記：Dropbox => axios interceptor 攔截器
