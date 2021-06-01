@@ -33,6 +33,20 @@
     - 筆記：Dropbox => Vuex-modules
 
 - 2021.05.30 Vuex & API
+
   - Learned-Code/Vue/Vue3/08-Vuex_API/exercise/vuex-api
     - 筆記：Dropbox => Vuex-使用 axios 的 API 管理
     - 筆記：Dropbox => axios interceptor 攔截器
+
+- 2021.05.30 Vue-Router(dynamic import)
+
+  - 筆記：Dropbox => Vue-Router(dynamic import)
+
+- 2021.05.31 GVA-Steps
+
+  - Entry-Access/element-step
+    - 筆記：Dropbox => GVA-Steps
+
+- 2021.06.01 Vue-Slot
+  - /Learned-Code/Vue/Vue3/props-demo/src/components/SlotsTitle.vue
+    - 筆記：Dropbox => Vue-Slot
