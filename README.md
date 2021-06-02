@@ -48,5 +48,10 @@
     - 筆記：Dropbox => GVA-Steps
 
 - 2021.06.01 Vue-Slot
+
   - /Learned-Code/Vue/Vue3/props-demo/src/components/SlotsTitle.vue
     - 筆記：Dropbox => Vue-Slot
+
+- 2021.06.02 Vue-Router-useRoute 方法取得網址參數(補)
+  - /Learned-Code/Vue/Vue3/05-VUE-Router-Example/exercise/src/views/Courses/\_id.vue
+    - 筆記：Dropbox => Vue-Router-useRoute 方法取得網址參數
