@@ -1,25 +1,34 @@
 <script>
 import axios from 'axios'
 import { onMounted, reactive } from '@vue/runtime-core';
+import { useRouter } from 'vue-router'
 export default {
   setup() {
     const courseList = reactive({data:{}})
+    const router = useRouter()
+
+
+    const gotoNewRouter = (id) => {
+      // router-link 以外的做法
+      router.push({path:`/course/${id}`})
+    }
 
    // 在 DOM 載入時 get api
     onMounted(()=>{
-      axios.get('https://vue-lessons-api.herokuapp.com/courses/list').then(res=>{
+      axios.get('https://vue-lessons-api.herokuapp.com/courses/list')
+      .then(res=>{
         courseList.data = res.data
         console.log(courseList.data)
       })
     })
 
-    return {courseList};
+    return {courseList,gotoNewRouter};
   },
 };
 </script>
 <template>
   <div id="courses">
-    <router-link class="card" v-for="item in courseList.data" :key="item.id" :to="`/course/${item.id}`">
+    <a class="card" v-for="item in courseList.data" :key="item.id" @click="gotoNewRouter(item.id)">
       <img :src="item.photo" alt="" />
       <div class="content">
         <h1>{{item.name}}</h1>
@@ -31,7 +40,7 @@ export default {
           <h2>NTD: {{item.money}}</h2>
         </div>
       </div>
-    </router-link>
+    </a>
   </div>
 </template>
 
