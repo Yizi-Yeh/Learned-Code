@@ -58,8 +58,13 @@
     - 筆記：Dropbox => Vue-Router-useRoute 方法取得網址參數
 
 - 2021.06.03 Vue-Router-useRouter 方法操作網址用的函式 / API 錯誤處理 / 計時器生命週期
+
   - /Learned-Code/Vue/Vue3/05-VUE-Router-Example/exercise/src/views/Courses/\_id.vue
   - /Learned-Code/Vue/Vue3/05-VUE-Router-Example/exercise/src/views/Courses/index.vue
     - 筆記：Dropbox => Vue-Router-API 錯誤處理
     - 筆記：Dropbox => Vue-Router-函式取代 router-link 轉導
     - 筆記：Dropbox => Vue-生命週期-onMounted && onUnmounted (倒數計時器）
+
+- 2021.06.04 Vue-Router-router-link-active
+  - /Learned-Code/Vue/Vue3/05-VUE-Router-Example/exercise/src/App.vue
+    - 筆記：Vue-Router-router-link-active
