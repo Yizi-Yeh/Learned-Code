@@ -66,5 +66,44 @@
     - 筆記：Dropbox => Vue-生命週期-onMounted && onUnmounted (倒數計時器）
 
 - 2021.06.04 Vue-Router-router-link-active
+
   - /Learned-Code/Vue/Vue3/05-VUE-Router-Example/exercise/src/App.vue
     - 筆記：Vue-Router-router-link-active
+
+- 2021.06.05 CORS & Cookie
+
+  - 筆記：Dropbox => CORS
+  - 筆記：Dropbox => Cookie
+
+- 2021.06.06
+
+  - /Learned-Code/ES6-Module
+    - 筆記：Dropbox => ES Module
+
+- 2021.06.13
+
+  - /git/Zh-Counter/src/views/Counters/index.vue
+    - 筆記：Dropbox => axios 傳送 form-data 的方法
+    - 筆記：Dropbox => Composition API + Element-UI 表單驗證
+    - 筆記：Dropbox => ESLint 自動排版
+
+- 2021.06.15
+
+  - /git/Zh-Counter/src/views/Counters/index.vue
+    - 筆記：Dropbox => Vue3-ctx.$refs 開發環境
+    - 筆記：Dropbox => Vue-Router-Different History modes
+    - 筆記：Dropbox => Vue 開發環境跨域 api && 環境變數設定
+    - 筆記：Dropbox => Vue-directive 自定義模板語法
+
+- 2021.06.19
+
+  - /git/
+    - 筆記：Dropbox => Linux 基本指令( 利用 google gcp 登入 linux 主機）
+    - 筆記：Dropbox => 使用 pm2 架設 nuxt 站台(生產環境)
+    - 筆記：Dropbox => nuxt 開發
+    - 筆記：Dropbox => 資料監控 watch ( ref && reactive 的差異）
+    - 筆記：Dropbox => Lifecycle 生命周明 (onBeforeMount / onMounted / onUpdated )
+
+- 2021.06.20
+  - //Users/yizi/Desktop/git/Learned-Code/Vue/vue-seo
+    - 筆記：Dropbox =>
