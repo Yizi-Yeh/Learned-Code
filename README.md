@@ -101,9 +101,13 @@
     - 筆記：Dropbox => Linux 基本指令( 利用 google gcp 登入 linux 主機）
     - 筆記：Dropbox => 使用 pm2 架設 nuxt 站台(生產環境)
     - 筆記：Dropbox => nuxt 開發
-    - 筆記：Dropbox => 資料監控 watch ( ref && reactive 的差異）
     - 筆記：Dropbox => Lifecycle 生命周明 (onBeforeMount / onMounted / onUpdated )
 
 - 2021.06.20
+
   - //Users/yizi/Desktop/git/Learned-Code/Vue/vue-seo
     - 筆記：Dropbox =>
+
+- 2021.06.20
+  - //Users/yizi/Desktop/git/Learned-Code/Vue/Vue3/puzzle-game-watch
+    - 筆記：Dropbox => 資料監控 watch ( ref && reactive 的差異）
