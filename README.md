@@ -101,13 +101,19 @@
     - 筆記：Dropbox => Linux 基本指令( 利用 google gcp 登入 linux 主機）
     - 筆記：Dropbox => 使用 pm2 架設 nuxt 站台(生產環境)
     - 筆記：Dropbox => nuxt 開發
-    - 筆記：Dropbox => Lifecycle 生命周明 (onBeforeMount / onMounted / onUpdated )
+    - 筆記：Dropbox => Lifecycle 生命週期 (onBeforeMount / onMounted / onUpdated )
 
 - 2021.06.20
 
   - //Users/yizi/Desktop/git/Learned-Code/Vue/vue-seo
-    - 筆記：Dropbox =>
+    - 筆記：Dropbox => Vue && Rendertron（補）
 
 - 2021.06.20
+
   - //Users/yizi/Desktop/git/Learned-Code/Vue/Vue3/puzzle-game-watch
-    - 筆記：Dropbox => 資料監控 watch ( ref && reactive 的差異）
+    - 筆記：Dropbox => 資料監控 watch ( ref && reactive 的差異 / 物件使用 {deep:true} 監控 ）
+
+- 2021.06.21
+  - //Users/yizi/Desktop/git/Learned-Code/Vue/Components/start
+    - 筆記：Dropbox => Star 組件-學習筆記 ( props 傳遞 / 利用 v-for idx 做陣列索引 / 動態綁定 style )
+    - 筆記：Dropbox => [Nuxt] components props 傳遞 / 開發就從思考 component 開始
